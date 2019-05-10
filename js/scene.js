@@ -165,12 +165,15 @@ let interval = null;
 window.addEventListener("figureLoaded", function(event) {
   self.tl = new TimelineMax().delay(0.3);
 
-  interval = setInterval(function() {
+  const animateSign = function() {
     self.tl.to(signsMesh.rotation, 0.3, { z: -0.5, ease: Expo.easeOut });
     self.tl.to(signsMesh.rotation, 0.3, { z: 0, ease: Expo.easeIn });
     self.tl.to(signsMesh.rotation, 0.3, { z: -0.5, ease: Expo.easeOut });
     self.tl.to(signsMesh.rotation, 0.3, { z: 0, ease: Expo.easeIn });
-  }, 2500);
+  };
+
+  interval = setInterval(animateSign, 2500);
+  animateSign();
 });
 
 /**
