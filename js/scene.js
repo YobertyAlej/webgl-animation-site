@@ -44,6 +44,10 @@ window.addEventListener("resize", () => {
  * Figure #1 · Typograpghy Figure
  */
 
+let legendGeometry = null;
+let legendMaterial = null;
+let legendMesh = null;
+
 let nameGeometry = null;
 let nameMaterial = null;
 let nameMesh = null;
@@ -51,6 +55,23 @@ let nameMesh = null;
 let signsGeometry = null;
 let signsMaterial = null;
 let signsMesh = null;
+
+loader.load("/fonts/Roboto Th_Regular.json", function(font) {
+  legendGeometry = new THREE.TextGeometry("who is", {
+    font: font,
+    size: 0.7,
+    height: 0
+  });
+
+  legendMaterial = new THREE.MeshPhysicalMaterial({ color: 0xffffff });
+
+  legendMesh = new THREE.Mesh(legendGeometry, legendMaterial);
+
+  legendMesh.position.x = -7;
+  legendMesh.position.y = 1.4;
+
+  scene.add(legendMesh);
+});
 
 loader.load("/fonts/ABeeZee_Regular.json", function(font) {
   nameGeometry = new THREE.TextGeometry("YobertyAlej", {
@@ -96,6 +117,22 @@ squareMesh.position.z = -1;
 scene.add(squareMesh);
 
 /**
+ * Figure #3 · Large Square
+ */
+let largeSquareGeometry = new THREE.BoxGeometry(6, 1.6, 1);
+let largeSquareMaterial = new THREE.MeshBasicMaterial({
+  color: 0xbab9c3
+});
+let largeSquareMesh = new THREE.Mesh(largeSquareGeometry, largeSquareMaterial);
+
+console.log(largeSquareMesh);
+largeSquareMesh.position.x = -5;
+largeSquareMesh.position.y = -1.8;
+largeSquareMesh.position.z = -1;
+
+scene.add(largeSquareMesh);
+
+/**
  * Stars Background
  */
 
@@ -120,10 +157,10 @@ scene.add(starField);
  * Light
  */
 
-const light = new THREE.PointLight(0xffffff, 1.5, 0);
-light.position.set(-1, 0, 25);
+let frontlight = new THREE.PointLight(0xffffff, 1.5, 0);
+frontlight.position.set(0, 0, 25);
 
-scene.add(light);
+scene.add(frontlight);
 
 /**
  * Render
@@ -168,12 +205,9 @@ window.addEventListener("figureLoaded", function(event) {
   const animateSign = function() {
     self.tl.to(signsMesh.rotation, 0.3, { z: -0.5, ease: Expo.easeOut });
     self.tl.to(signsMesh.rotation, 0.3, { z: 0, ease: Expo.easeIn });
-    self.tl.to(signsMesh.rotation, 0.3, { z: -0.5, ease: Expo.easeOut });
-    self.tl.to(signsMesh.rotation, 0.3, { z: 0, ease: Expo.easeIn });
   };
 
-  interval = setInterval(animateSign, 2500);
-  animateSign();
+  window.addEventListener("click", animateSign);
 });
 
 /**
