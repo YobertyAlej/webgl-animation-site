@@ -57,7 +57,7 @@ let signsMaterial = null;
 let signsMesh = null;
 
 loader.load("/fonts/Roboto Th_Regular.json", function(font) {
-  legendGeometry = new THREE.TextGeometry("who is", {
+  legendGeometry = new THREE.TextGeometry("¿como estas", {
     font: font,
     size: 0.7,
     height: 0
