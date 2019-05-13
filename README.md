@@ -1,6 +1,14 @@
 # 3D Website Animation
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/c5e602c5-a20b-4e4f-9c00-d5ba49babf09/deploy-status)](https://app.netlify.com/sites/affectionate-joliot-5070d3/deploys)
+<p align="center">
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c5e602c5-a20b-4e4f-9c00-d5ba49babf09/
+deploy-status)](https://app.netlify.com/sites/affectionate-joliot-5070d3/deploys)
+
+<a href="https://twitter.com/intent/follow?screen_name=yobertyalej">
+<img src="https://img.shields.io/twitter/follow/yobertyalej.svg?style=social&logo=twitter"
+alt="follow on Twitter"></a>
+</p>
 
 Using WebGL and Three.js, we will explore the advantages and usage of the ui/ux animation
 
