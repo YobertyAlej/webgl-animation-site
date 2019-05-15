@@ -14,6 +14,24 @@ Using WebGL and Three.js, we will explore the advantages and usage of the ui/ux 
 <img src="demo/webgl-demo.gif"
 alt="follow on Twitter">
 
+# Table of Contents
+
+- [3D Website Animation <g-emoji class="g-emoji" alias="globe_with_meridians" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f310.png">🌐</g-emoji><g-emoji class="g-emoji" alias="framed_picture" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f5bc.png">🖼️</g-emoji>](#3d-website-animation-️)
+  - [Live Demo <g-emoji class="g-emoji" alias="video_camera" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4f9.png">📹</g-emoji><g-emoji class="g-emoji" alias="red_circle" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f534.png">🔴</g-emoji>](#live-demo-)
+  - [Hello World <g-emoji class="g-emoji" alias="thinking" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f914.png">🤔</g-emoji>](#hello-world-)
+    - [Elements <g-emoji class="g-emoji" alias="package" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4e6.png">📦</g-emoji>](#elements-)
+    - [Bootstrap ▶](#bootstrap-)
+    - [Camera <g-emoji class="g-emoji" alias="movie_camera" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3a5.png">🎥</g-emoji>](#camera-)
+      - [PerspectiveCamera](#perspectivecamera)
+      - [OrhograficCamera](#orhograficcamera)
+    - [Controls <g-emoji class="g-emoji" alias="video_game" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3ae.png">🎮</g-emoji>](#controls-)
+    - [Lights <g-emoji class="g-emoji" alias="bulb" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a1.png">💡</g-emoji>](#lights-)
+    - [Mesh <g-emoji class="g-emoji" alias="small_red_triangle" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f53a.png">🔺</g-emoji>🦖](#mesh-)
+    - [Renderer <g-emoji class="g-emoji" alias="pencil2" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/270f.png">✏️</g-emoji>](#renderer-️)
+    - [Resize Event <g-emoji class="g-emoji" alias="left_right_arrow" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2194.png">↔️</g-emoji>](#resize-event-️)
+    - [Init <g-emoji class="g-emoji" alias="rocket" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f680.png">🚀</g-emoji>](#init-)
+  - [License <g-emoji class="g-emoji" alias="balance_scale" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2696.png">⚖️</g-emoji>](#license-️)
+
 ## Live Demo 📹🔴
 
 You can watch it live in
@@ -52,7 +70,7 @@ The scene is being captured by a _camera_, and controled by defined _controls_
 The scene it's displayed in the screen using a _renderer_ which can be using
 _WebGL_, or _Canvas_ or _SVG_
 
-### Bootstrap
+### Bootstrap ▶
 
 ```js
 const init = function() {
@@ -249,7 +267,7 @@ const createMeshes = function() {
 We create 2 things, a _Geometry_ and a _material_, both of them create the _shape_ and _texture_
 of our object, you can use from plane colors to external sources to create this 2 objects; After the creation we add them to the scene.
 
-### Renderer
+### Renderer ✏️
 
 ```js
 const createRenderer = function() {
@@ -293,7 +311,7 @@ const render = function() {
 };
 ```
 
-### Resize Event
+### Resize Event ↔️
 
 ```js
 const onWindowResize = function() {
@@ -316,7 +334,7 @@ const onWindowResize = function() {
 window.addEventListener("resize", onWindowResize);
 ```
 
-### Init
+### Init 🚀
 
 We finnaly lauch the app by calling the previously defined init function
 
@@ -325,7 +343,7 @@ We finnaly lauch the app by calling the previously defined init function
 init();
 ```
 
-## License
+## License ⚖️
 
 MIT License
 
