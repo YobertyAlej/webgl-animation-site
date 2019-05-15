@@ -1,4 +1,4 @@
-# 3D Website Animation
+# 3D Website Animation 🌐🖼️
 
 <p align="center">
 
@@ -14,18 +14,18 @@ Using WebGL and Three.js, we will explore the advantages and usage of the ui/ux 
 <img src="demo/webgl-demo.gif"
 alt="follow on Twitter">
 
-## Live Demo
+## Live Demo 📹🔴
 
 You can watch it live in
 
 > WebGL Hello World https://yobertyalej-webgl.netlify.com/
 
-## Hello World
+## Hello World 🤔
 
 In Lewy Blue's "Discover Three.js" e-book, we found this good example of the necessary parts
 of a fluid animation
 
-### Elements
+### Elements 📦
 
 ```js
 /**
@@ -89,7 +89,7 @@ We also start the _animation loop_, using the _setAnimationLoop_ method, where w
 will call the render function aswell as the update function, to update any values
 before render the animation
 
-### Camera
+### Camera 🎥
 
 ```js
 const createCamera = function() {
@@ -151,7 +151,7 @@ OrthographicCamera( left : Number, right : Number, top : Number, bottom : Number
 
 ```
 
-### Controls
+### Controls 🎮
 
 Then you add the _controls_, which will enable the navigation through
 the scene
@@ -181,7 +181,7 @@ The full list of controls are
 - trackball
 - transform
 
-### Lights
+### Lights 💡
 
 The scene needs to have an illumination source in order to be visible
 by the camera, unless it would be just a dark screen
@@ -212,7 +212,9 @@ const createLights = function() {
 };
 ```
 
-### Mesh
+### Mesh 🔺🦖
+
+The objects in the scene
 
 ```js
 const createMeshes = function() {
@@ -243,6 +245,9 @@ const createMeshes = function() {
   scene.add(mesh);
 };
 ```
+
+We create 2 things, a _Geometry_ and a _material_, both of them create the _shape_ and _texture_
+of our object, you can use from plane colors to external sources to create this 2 objects; After the creation we add them to the scene.
 
 ### Renderer
 
@@ -319,3 +324,27 @@ We finnaly lauch the app by calling the previously defined init function
 // call the init function to set everything up
 init();
 ```
+
+## License
+
+MIT License
+
+Copyright (c) 2019 Yoberty Garcia
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
