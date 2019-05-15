@@ -11,10 +11,21 @@ alt="follow on Twitter"></a>
 
 Using WebGL and Three.js, we will explore the advantages and usage of the ui/ux animation
 
+<img src="demo/webgl-demo.gif"
+alt="follow on Twitter">
+
+## Live Demo
+
+You can watch it live in
+
+> WebGL Hello World https://yobertyalej-webgl.netlify.com/
+
 ## Hello World
 
 In Lewy Blue's "Discover Three.js" e-book, we found this good example of the necessary parts
 of a fluid animation
+
+### Elements
 
 ```js
 /**
@@ -40,6 +51,8 @@ A _scene_ is composed by _meshs_, _lights_, and other _objects_.
 The scene is being captured by a _camera_, and controled by defined _controls_
 The scene it's displayed in the screen using a _renderer_ which can be using
 _WebGL_, or _Canvas_ or _SVG_
+
+### Bootstrap
 
 ```js
 const init = function() {
@@ -73,8 +86,10 @@ to a solid color, and the remaning elements gets set calling some functions,
 (createCamera, createControls, createLights, createMeshes and createRenderer).
 
 We also start the _animation loop_, using the _setAnimationLoop_ method, where we
-will call the render function aswell as the update function, to update any updated
-values before render the animation
+will call the render function aswell as the update function, to update any values
+before render the animation
+
+### Camera
 
 ```js
 const createCamera = function() {
@@ -92,7 +107,56 @@ const createCamera = function() {
 
   camera.position.set(-4, 4, 10); // x,y,z
 };
+```
 
+In order to have a vision of the scene we need to create a _camera_.
+
+A camera represents how are we going to be observing the animation,
+THREE.js define 2 types of cameras, _PerspectiveCamera_, and _OrthograficCamera_
+
+After that, we set the x,y,z position of the camera
+
+#### PerspectiveCamera
+
+Is designed to mimic the way the human eye sees, it is the most common projection
+mode used for rendering a 3D scene.
+
+```js
+PerspectiveCamera( fov : Number, aspect : Number, near : Number, far : Number )
+```
+
+The parameters that receive are elements of the _Viewing frustum_
+
+- fov — Camera frustum vertical _field of view_.
+- aspect — Camera frustum _aspect ratio_.
+- near — Camera frustum _near plane_.
+- far — Camera frustum _far plane_.
+
+#### OrhograficCamera
+
+In this projection mode, an object's size in the rendered image stays constant regardless of its distance from the camera.
+
+This can be useful for rendering 2D scenes and UI elements, amongst other things
+
+```js
+
+OrthographicCamera( left : Number, right : Number, top : Number, bottom : Number, near : Number, far : Number )
+
+- left — Camera frustum left plane.
+- right — Camera frustum right plane.
+- top — Camera frustum top plane.
+- bottom — Camera frustum bottom plane.
+- near — Camera frustum near plane.
+- far — Camera frustum far plane.
+
+```
+
+### Controls
+
+Then you add the _controls_, which will enable the navigation through
+the scene
+
+```js
 const createControls = function() {
   /**
    * 2 of the 6 elements of the animation
@@ -103,7 +167,30 @@ const createControls = function() {
 
   controls = new THREE.OrbitControls(camera, container); // Orbit controls allows us to move around
 };
+```
 
+Orbit controls allow the camera to orbit around a target.
+
+The full list of controls are
+
+- deviceorientation
+- fly
+- map
+- orbit
+- pointerlock
+- trackball
+- transform
+
+### Lights
+
+The scene needs to have an illumination source in order to be visible
+by the camera, unless it would be just a dark screen
+
+We create them and add them to the scene.
+
+We can create as much different light sources as needed
+
+```js
 const createLights = function() {
   /**
    * 3 of the 6 elements of the animation
@@ -123,7 +210,11 @@ const createLights = function() {
 
   scene.add(ambientLight, mainLight); // adds the elements to the scene
 };
+```
 
+### Mesh
+
+```js
 const createMeshes = function() {
   /**
    * 4 of the 6 elements of the animation
@@ -151,7 +242,11 @@ const createMeshes = function() {
 
   scene.add(mesh);
 };
+```
 
+### Renderer
+
+```js
 const createRenderer = function() {
   /**
    * 5-6 elements of the animation
@@ -191,7 +286,11 @@ const render = function() {
 
   renderer.render(scene, camera);
 };
+```
 
+### Resize Event
+
+```js
 const onWindowResize = function() {
   /**
    * A function that will be called every time the window gets resized.
@@ -210,7 +309,13 @@ const onWindowResize = function() {
 };
 
 window.addEventListener("resize", onWindowResize);
+```
 
+### Init
+
+We finnaly lauch the app by calling the previously defined init function
+
+```js
 // call the init function to set everything up
 init();
 ```
