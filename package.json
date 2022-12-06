@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/YobertyAlej/webgl-animation-site#readme",
   "devDependencies": {
-    "http-server": "^0.11.1"
+    "http-server": "^0.11.2"
   }
 }
